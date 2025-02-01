@@ -32,7 +32,7 @@ runs:
   steps:
     - name: Compute binary hash
       id: compute-digest
-      uses: genians/slsa-github-generator/.github/actions/compute-sha256@v2.0.9
+      uses: genians/slsa-github-generator/.github/actions/compute-sha256@v2.0.10
       with:
         path: "${{ inputs.path }}"
 
