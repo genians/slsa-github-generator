@@ -30,6 +30,6 @@ jobs:
       id-token: write # For signing.
       contents: read # For repo checkout of private repos.
       actions: read # For getting workflow run on private repos.
-    uses: genians/slsa-github-generator/.github/workflows/builder_maven_slsa3.yml@v2.0.6
+    uses: genians/slsa-github-generator/.github/workflows/builder_maven_slsa3.yml@v2.0.7
     with:
       directory: ./e2e/maven/workflow_dispatch

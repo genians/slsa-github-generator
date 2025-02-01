@@ -85,7 +85,7 @@ runs:
 
     - name: Compute the hash
       id: compute
-      uses: genians/slsa-github-generator/.github/actions/compute-sha256@v2.0.6
+      uses: genians/slsa-github-generator/.github/actions/compute-sha256@v2.0.7
       with:
         path: "${{ steps.validate-path.outputs.file_path }}"
 
