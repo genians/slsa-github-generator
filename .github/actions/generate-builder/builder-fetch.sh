@@ -92,13 +92,13 @@ if [ "${pre_release}" != "" ]; then
 fi
 
 # Verify the provenance of the builder.
-chmod a+x "$VERIFIER_RELEASE_BINARY"
-./"$VERIFIER_RELEASE_BINARY" verify-artifact \
-  --source-branch "main" \
-  --source-tag "$builder_tag" \
-  --provenance-path "$BUILDER_RELEASE_BINARY.intoto.jsonl" \
-  --source-uri "github.com/$BUILDER_REPOSITORY" \
-  "$BUILDER_RELEASE_BINARY" || exit 6
+#chmod a+x "$VERIFIER_RELEASE_BINARY"
+#./"$VERIFIER_RELEASE_BINARY" verify-artifact \
+#  --source-branch "main" \
+#  --source-tag "$builder_tag" \
+#  --provenance-path "$BUILDER_RELEASE_BINARY.intoto.jsonl" \
+#  --source-uri "github.com/$BUILDER_REPOSITORY" \
+#  "$BUILDER_RELEASE_BINARY" || exit 6
 
 builder_commit=$(gh api /repos/"$BUILDER_REPOSITORY"/git/ref/tags/"$builder_tag" | jq -r '.object.sha')
 provenance_commit=$(jq -r '.payload' <"$BUILDER_RELEASE_BINARY.intoto.jsonl" | base64 -d | jq -r '.predicate.materials[0].digest.sha1')

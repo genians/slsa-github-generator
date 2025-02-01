@@ -31,4 +31,4 @@ runs:
   steps:
     - name: Generate random value
       id: rng
-      uses: genians/slsa-github-generator/.github/actions/rng@v2.0.11
+      uses: genians/slsa-github-generator/.github/actions/rng@v2.0.12
