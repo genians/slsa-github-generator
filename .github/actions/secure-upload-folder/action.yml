@@ -60,7 +60,7 @@ runs:
 
     - name: Upload the artifact
       id: upload
-      uses: genians/slsa-github-generator/.github/actions/secure-upload-artifact@v2.0.4
+      uses: genians/slsa-github-generator/.github/actions/secure-upload-artifact@v2.0.5
       with:
         name: "${{ inputs.name }}"
         path: "${{ steps.create.outputs.tarball-path }}"
